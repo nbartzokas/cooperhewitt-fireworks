@@ -143,12 +143,14 @@ $(function(){
   function update() {
 
     // draw background gradient
-    var bgGradient = bgBitmap.context.createRadialGradient( innerCircle.x, innerCircle.y, innerCircle.radius, outerCircle.x, outerCircle.y, outerCircle.radius);
-    bgGradient.addColorStop(0, fgColor);
-    bgGradient.addColorStop(0.35, bgColor);
-    bgGradient.addColorStop(1, bgColor);
-    bgBitmap.cls();
-    bgBitmap.circle(outerCircle.x, outerCircle.y, outerCircle.radius, bgGradient);
+    if (!game.device.android && !game.device.iOS){
+      var bgGradient = bgBitmap.context.createRadialGradient( innerCircle.x, innerCircle.y, innerCircle.radius, outerCircle.x, outerCircle.y, outerCircle.radius);
+      bgGradient.addColorStop(0, fgColor);
+      bgGradient.addColorStop(0.35, bgColor);
+      bgGradient.addColorStop(1, bgColor);
+      bgBitmap.cls();
+      bgBitmap.circle(outerCircle.x, outerCircle.y, outerCircle.radius, bgGradient);
+    }
 
     // draw last frame at lower alpha for trails effect
     if (trailsEnabled) {
