@@ -11,7 +11,7 @@ $(function(){
 
     // carnegie mansion
     , mansion
-    , mansionScale=0.5
+    , mansionScale=1.0
 
     // cooper hewitt collections swatches
     , swatchKeys
@@ -37,8 +37,8 @@ $(function(){
     // firework particle settings
     , particleMinCount=40
     , particleMaxCount=60
-    , particleMinScale=0.05
-    , particleMaxScale=0.1
+    , particleMinScale=0.5
+    , particleMaxScale=1.0
     , particleLifeVariance=250
 
     // trails
@@ -197,7 +197,7 @@ $(function(){
     // create firework sprite at bottom center
     var firework = scene.create(game.world.width/2, game.world.height, "particle");
     firework.anchor.setTo(0.5, 0.5);
-    firework.scale.x = firework.scale.y = 0.25;
+    // firework.scale.x = firework.scale.y = 1.0;
     firework.tint = parseInt(color,16);
     fireworks.push(firework);
 
